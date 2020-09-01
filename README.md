@@ -16,7 +16,7 @@
 
 ## 🖋 Memo.
   - After first Install, Asked to Install `@types/vfile-message` Again After Starting Up Development Environment.  
-  Each Module Using `remark`, Adjust Version of `remark`.  
+  Adjust `remark` Version, Used in Each Module.  
   `resolutions -> remark -> 12.*.*` on package.json.
   - When Development or Build, Error Below on Terminal.  
   `(node:67113) [ESLINT_LEGACY_ECMAFEATURES]`  
