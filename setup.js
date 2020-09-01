@@ -7,7 +7,21 @@ const location =
     : `https://localhost:8000`
 
 // Switching Path Prefix. (When Deploy to Subdirectory.)
-const pathPrefix = process.env.GITHUB_ACTIONS ? `/gatsby-my-starter/` : `/`
+// const pathPrefix = process.env.GITHUB_ACTIONS ? `/gatsby-my-starter/` : `/`
+// 👇 Temporary Write, All Branches. 👇
+const pathPrefix = () => {
+  const setConfig = {
+    enable: true,
+    subDir: `/gatsby-my-starter/`
+  }
+  const setPathPrefix = setConfig.enable && process.env.GITHUB_ACTIONS
+    ? setConfig.subDir
+    : process.env.GITHUB_ACTIONS
+    ? `/`
+    : `/`
+
+  return setPathPrefix
+}
 
 // When Using Materials Through GraphQL.
 const materials = {
@@ -24,7 +38,7 @@ const cms = ['markdown', 'contentful', 'microcms', 'wordpress'][0]
 
 module.exports = {
   LOCATION: location,
-  PATH_PREFIX: pathPrefix,
+  PATH_PREFIX: pathPrefix(),
   CHOOSE_MATERIALS: materials,
   CHOOSE_CMS: cms
 }
