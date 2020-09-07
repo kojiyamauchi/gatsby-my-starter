@@ -14,11 +14,7 @@ const pathPrefix = () => {
     enable: true,
     subDir: `/gatsby-my-starter/`
   }
-  const setPathPrefix = setConfig.enable && process.env.GITHUB_ACTIONS
-    ? setConfig.subDir
-    : process.env.GITHUB_ACTIONS
-    ? `/`
-    : `/`
+  const setPathPrefix = setConfig.enable && process.env.GITHUB_ACTIONS ? setConfig.subDir : process.env.GITHUB_ACTIONS ? `/` : `/`
 
   return setPathPrefix
 }
@@ -33,8 +29,8 @@ const materials = {
   pdf: false
 }
 
-// Choose CMS. Default is `markdown`.
-const cms = ['markdown', 'contentful', 'microcms', 'wordpress'][0]
+// Choose CMS.
+const cms = ['markdown', 'contentful', 'microcms', 'wordpress', 'none'][0]
 
 module.exports = {
   LOCATION: location,
