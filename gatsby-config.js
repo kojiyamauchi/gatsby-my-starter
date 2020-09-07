@@ -19,7 +19,6 @@ const setFilesystem = Object.keys(CHOOSE_MATERIALS)
   .filter((info) => info)
 
 const setCms = (argCms) => {
-  // Default is `markdown`
   switch (argCms) {
     case 'markdown': {
       // Generate Plugin Obj Below.
@@ -51,20 +50,23 @@ const setCms = (argCms) => {
     case 'contentful': {
       // Generate Plugin Obj Below.
       const obj = {}
-      return obj
+      return []
     }
 
     case 'microcms': {
       // Generate Plugin Obj Below.
       const obj = {}
-      return obj
+      return []
     }
 
     case 'wordpress': {
       // Generate Plugin Obj Below.
       const obj = {}
-      return obj
+      return []
     }
+
+    case 'none':
+      return []
 
     default:
       throw new Error('CMS is Not Setup, Please Check setup.js.')
