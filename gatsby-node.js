@@ -193,6 +193,10 @@ switch (CHOOSE_CMS) {
     break
   }
 
+  case 'none':
+    console.log('Do Not Use CMS.')
+    break
+
   default:
     throw new Error('CMS is Not Setup, Please Check setup.js.')
 }
