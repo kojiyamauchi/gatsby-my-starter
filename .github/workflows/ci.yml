@@ -6,7 +6,7 @@ on:
 
 env:
   LAUNCH_JEST: off # Launch Jest. [ on, off ]
-  LAUNCH_ESLINT: on # Launch ESLint. [ on, off ]
+  LAUNCH_ESLINT: off # Launch ESLint. [ on, off ]
   LAUNCH_BUILD: off # Launch Build. [ on, off ]
 
 jobs:
