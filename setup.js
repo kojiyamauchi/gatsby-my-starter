@@ -7,14 +7,12 @@ const location =
     : `https://localhost:8000`
 
 // Switching Path Prefix. (When Deploy to Subdirectory.)
-// const pathPrefix = process.env.GITHUB_ACTIONS ? `/gatsby-my-starter/` : `/`
-// 👇 Temporary Write, All Branches. 👇
 const pathPrefix = () => {
   const setConfig = {
     enable: true,
     subDir: `/gatsby-my-starter/`
   }
-  const setPathPrefix = setConfig.enable && process.env.GITHUB_ACTIONS ? setConfig.subDir : process.env.GITHUB_ACTIONS ? `/` : `/`
+  const setPathPrefix = setConfig.enable && process.env.GITHUB_ACTIONS ? setConfig.subDir : `/`
 
   return setPathPrefix
 }
