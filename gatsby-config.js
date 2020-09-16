@@ -103,7 +103,7 @@ module.exports = {
         short_name: `Gatsby.js My Starter`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#d6371e`,
+        theme_color: `#ffffff`,
         display: `standalone`,
         icon: `src/materials/icons/icon.png` // This path is relative to the root of the site.
       }
