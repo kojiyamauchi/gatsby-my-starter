@@ -7,7 +7,7 @@
 
 import React, { ReactNode } from 'react'
 
-import { Header } from '@/components/Managements/Header'
+import { HeaderContainer } from '@/components/Managements/HeaderContainer'
 import { Footer } from '@/components/Presentations/Footer'
 import styled from 'styled-components'
 import { GlobalStyle } from '@/styles/StyleGlobal'
@@ -20,7 +20,7 @@ type Props = {
 const LayoutComponent: React.FC<Props> = ({ className, children }): JSX.Element => (
   <div className={className}>
     <GlobalStyle />
-    <Header />
+    <HeaderContainer />
     {children}
     <Footer />
   </div>

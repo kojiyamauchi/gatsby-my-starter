@@ -1,5 +1,5 @@
 /*
-  Header.
+  Header Container.
 */
 
 import React from 'react'
@@ -14,7 +14,7 @@ type Props = {
   className?: string
 }
 
-const HeaderComponent: React.FC<Props> = ({ className }): JSX.Element => {
+const HeaderContainerComponent: React.FC<Props> = ({ className }): JSX.Element => {
   const data = useStaticQuery<HeaderQuery>(graphql`
     query Header {
       site {
@@ -50,10 +50,10 @@ const HeaderComponent: React.FC<Props> = ({ className }): JSX.Element => {
   )
 }
 
-const StyledComponent = styled(HeaderComponent)`
+const StyledComponent = styled(HeaderContainerComponent)`
   width: 100%;
   flex-direction: column;
   ${FlexCenter};
 `
 
-export const Header = StyledComponent
+export const HeaderContainer = StyledComponent
