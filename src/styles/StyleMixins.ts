@@ -10,12 +10,13 @@ import { BREAK_POINT_WIDTH } from '@/styles/StyleVariables'
 // Break Point.
 /*
 Usage.
-Small Mobile.  => ${styleMixins.breakPoint.smallMobile` Add CSS Property `}
-Mobile.        => ${styleMixins.breakPoint.mobile` Add CSS Property `}
-Large Mobile.  => ${styleMixins.breakPoint.largeMobile` Add CSS Property `}
-Tablet.        => ${styleMixins.breakPoint.tablet` Add CSS Property `}
-Desktop.       => ${styleMixins.breakPoint.desktop` Add CSS Property `}
-Large Desktop. => ${styleMixins.breakPoint.largeDesktop` Add CSS Property `}
+Small Mobile.  => ${BreakPoint.smallMobile` Add CSS Property `}
+Mobile.        => ${BreakPoint.mobile` Add CSS Property `}
+Large Mobile.  => ${BreakPoint.largeMobile` Add CSS Property `}
+Tablet.        => ${BreakPoint.tablet` Add CSS Property `}
+Desktop.       => ${BreakPoint.desktop` Add CSS Property `}
+Large Desktop. => ${BreakPoint.largeDesktop` Add CSS Property `}
+Extra Large Desktop. => ${BreakPoint.extraLargeDesktop` Add CSS Property `}
 */
 export const BreakPoint = Object.keys(BREAK_POINT_WIDTH).reduce((accumulator, current): BreakPointMember => {
   const breakPointKey = current as keyof BreakPointWidthMember
