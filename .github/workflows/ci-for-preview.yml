@@ -1,17 +1,16 @@
-name: CI
+name: CI for Preview
 on:
   pull_request:
     types: synchronize
-    branches: develop
+    branches: master
 
 env:
-  LAUNCH_JEST: off # Launch Jest. [ on, off ]
-  LAUNCH_ESLINT: off # Launch ESLint. [ on, off ]
-  LAUNCH_BUILD: off # Launch Build. [ on, off ]
+  LAUNCH_ESLINT: on # Launch ESLint. [ on, off ]
+  LAUNCH_BUILD: on # Launch Build. [ on, off ]
 
 jobs:
-  jest-and-eslint:
-    name: Jest & ESLint
+  eslint:
+    name: ESLint for Preview
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,16 +20,7 @@ jobs:
         with:
           node-version: 12.x
       - name: Set Env
-        run: |
-          echo "::set-env name=LAUNCH_JEST::$(echo ${LAUNCH_JEST})"
-          echo "::set-env name=LAUNCH_ESLINT::$(echo ${LAUNCH_ESLINT})"
-          if ls src/tests/*.test.ts > /dev/null 2>&1 || ls src/tests/*.test.tsx > /dev/null 2>&1 || ls src/tests/*.test.js > /dev/null 2>&1
-          then
-              echo "::set-env name=FILE_EXISTS::$(echo "on")"
-          else
-              echo "::set-env name=FILE_EXISTS::$(echo "off")"
-          fi
-        shell: bash
+        run: echo "::set-env name=LAUNCH_ESLINT::$(echo ${LAUNCH_ESLINT})"
       - name: Get Yarn Cache Directory
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -43,9 +33,6 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install Dependencies
         run: yarn
-      - name: Do Jest
-        if: env.LAUNCH_JEST == 'on' && env.FILE_EXISTS == 'on'
-        run: yarn jest
       - name: Do ESLint
         if: env.LAUNCH_ESLINT == 'on'
         uses: reviewdog/action-eslint@v1
@@ -57,8 +44,8 @@ jobs:
         run: yarn eslint 'src/**/*.{ts,tsx,js}' --max-warnings 0
 
   build-test:
-    name: Build Test
-    needs: jest-and-eslint
+    name: Build Test for Preview
+    needs: eslint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -68,8 +55,7 @@ jobs:
         with:
           node-version: 12.x
       - name: Set Env
-        run: |
-          echo "::set-env name=LAUNCH_BUILD::$(echo ${LAUNCH_BUILD})"
+        run: echo "::set-env name=LAUNCH_BUILD::$(echo ${LAUNCH_BUILD})"
       - name: Get Yarn Cache Directory
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"

@@ -134,7 +134,7 @@
     "clean": "gatsby clean",
     "jest": "jest --passWithNoTests",
     "check-pkg": "ncu",
-    "update-pkg": "ncu -u",
+    "update-pkg": "ncu '/^(?!(@add-ignore-module-name)).*$/' -u",
     "re-install": "rm yarn.lock && rm -rf node_modules && yarn install"
   }
 }
