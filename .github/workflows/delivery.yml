@@ -48,7 +48,7 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install Dependencies
         run: yarn
-      - name: Build
+      - name: Do Build
         if: env.LAUNCH_BUILD == 'on'
         run: yarn build
       - name: Deploy GitHub Pages / Netlify
@@ -78,7 +78,6 @@ jobs:
     steps:
       - name: Set Env
         run: |
-          echo "::set-env name=LAUNCH_BUILD::$(echo ${LAUNCH_BUILD})"
           echo "::set-env name=LAUNCH_DEPLOY::$(echo ${LAUNCH_DEPLOY})"
           echo "::set-env name=DEPLOY_TYPE::$(echo ${DEPLOY_TYPE})"
           echo "::set-env name=ENDPOINT_GITHUB_PAGES::$(echo ${ENDPOINT_GITHUB_PAGES})"
