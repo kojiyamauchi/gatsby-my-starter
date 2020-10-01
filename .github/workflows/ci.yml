@@ -2,12 +2,12 @@ name: CI
 on:
   pull_request:
     types: synchronize
-    branches: develop
+    branches: master
 
 env:
   LAUNCH_JEST: off # Launch Jest. [ on, off ]
-  LAUNCH_ESLINT: off # Launch ESLint. [ on, off ]
-  LAUNCH_BUILD: off # Launch Build. [ on, off ]
+  LAUNCH_ESLINT: on # Launch ESLint. [ on, off ]
+  LAUNCH_BUILD: on # Launch Build. [ on, off ]
 
 jobs:
   jest-and-eslint:
