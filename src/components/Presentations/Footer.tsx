@@ -12,7 +12,9 @@ type Props = {
 
 const FooterComponent: React.FC<Props> = ({ className }): JSX.Element => (
   <div className={className}>
-    <a href="http://kojiyamauchi.com">© {new Date().getFullYear()} All The Small Things, All Rights Reserved.</a>
+    <a href="http://kojiyamauchi.com" target="_blank" rel="noreferrer">
+      © {new Date().getFullYear()} All The Small Things, All Rights Reserved.
+    </a>
   </div>
 )
 
