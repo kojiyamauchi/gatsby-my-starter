@@ -2,7 +2,7 @@
   Markdown Image
 */
 
-import React, { CSSProperties } from 'react'
+import { CSSProperties } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import GatsbyMarkdownImage, { FluidObject } from 'gatsby-image'
 import { MarkdownImageQuery } from 'graphql-types'

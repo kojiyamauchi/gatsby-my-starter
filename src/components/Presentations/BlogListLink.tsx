@@ -2,7 +2,6 @@
   Blog List Link.
 */
 
-import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Img, { FluidObject } from 'gatsby-image'

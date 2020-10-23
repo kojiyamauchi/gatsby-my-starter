@@ -2,7 +2,6 @@
   Header Container.
 */
 
-import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { GlobalHeading } from '@/components/Presentations/GlobalHeading'
 import { Navigation } from '@/components/Presentations/Navigation'
