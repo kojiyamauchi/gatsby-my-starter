@@ -2,7 +2,6 @@
   Navigation.
 */
 
-import React from 'react'
 import styled from 'styled-components'
 import { FlexHorizontalBetween, BreakPoint } from '@/styles/StyleMixins'
 

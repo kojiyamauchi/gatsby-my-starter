@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 import { HeaderContainer } from '@/components/Managements/HeaderContainer'
 import { Footer } from '@/components/Presentations/Footer'

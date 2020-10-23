@@ -2,7 +2,6 @@
   Fourth Page.
 */
 
-import React from 'react'
 import { SEO } from '@/components/seo'
 import { Layout } from '@/components/layout'
 import { PageHeading } from '@/components/Presentations/PageHeading'
