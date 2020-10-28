@@ -7,17 +7,28 @@
 
 ## ⛵️ Base Starter.  
   - [Gatsby's Default Starter.](https://github.com/gatsbyjs/gatsby-starter-default)  
-
+  
+ー  
+  
 ## ⛵️ Usage.  
   - Development.
     - `yarn dev`
   - Build.
     - `yarn build`  
-
+  
+ー  
+  
 ## 🖋 Memo.
   - After first Install, Asked to Install `@types/vfile-message` Again After Starting Up Development Environment.  
   Adjust `remark` Version, Used in Each Module.  
   `resolutions -> remark -> 12.*.*` on package.json.
+  
+ー  
+  
+## ✋ TODO.
+  - When Building in CI, `WebpackError: ReferenceError: React is not defined` Occur.  
+  Maybe, the Version of React Installed in the Each Module Does Not Yet Match @17.  
+  Temporary -> Add `yarn.lock`  
   - When Development or Build, Error Below on Terminal.  
   `(node:67113) [ESLINT_LEGACY_ECMAFEATURES]`  
   Maybe, Bad Way to Write `short-uuid/.eslintrc`.  
