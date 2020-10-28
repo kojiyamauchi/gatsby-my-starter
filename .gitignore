@@ -69,7 +69,7 @@ yarn-error.log
 .yarn-integrity
 
 # I Added
-yarn.lock
+#yarn.lock
 node_modules
 .cache-loader/
 .history/
