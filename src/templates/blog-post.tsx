@@ -44,23 +44,21 @@ export const query = graphql`
   }
 `
 
-const BlogPostComponent: React.FC<Props> = ({ className, location, data, pageContext }): JSX.Element => {
-  return (
-    <Layout>
-      <SEO
-        title={data?.markdownRemark?.frontmatter?.title || undefined}
-        description={data?.markdownRemark?.frontmatter?.description || undefined}
-        pagePath={location.pathname}
-      />
-      <div className={className}>
-        <div className="content" dangerouslySetInnerHTML={{ __html: data?.markdownRemark?.html || '' }} />
-        <BlogPostData categories={data?.markdownRemark?.frontmatter?.categories} date={data?.markdownRemark?.frontmatter?.date} />
-        <MarkdownImage className="img-blog" alt="Blog Image" id={data?.markdownRemark?.frontmatter?.image?.id} />
-        <BlogPostPagenation previous={pageContext.previous} next={pageContext.next} />
-      </div>
-    </Layout>
-  )
-}
+const BlogPostComponent: React.FC<Props> = ({ className, location, data, pageContext }): JSX.Element => (
+  <Layout>
+    <SEO
+      title={data?.markdownRemark?.frontmatter?.title || undefined}
+      description={data?.markdownRemark?.frontmatter?.description || undefined}
+      pagePath={location.pathname}
+    />
+    <div className={className}>
+      <div className="content" dangerouslySetInnerHTML={{ __html: data?.markdownRemark?.html || '' }} />
+      <BlogPostData categories={data?.markdownRemark?.frontmatter?.categories} date={data?.markdownRemark?.frontmatter?.date} />
+      <MarkdownImage className="img-blog" alt="Blog Image" id={data?.markdownRemark?.frontmatter?.image?.id} />
+      <BlogPostPagenation previous={pageContext.previous} next={pageContext.next} />
+    </div>
+  </Layout>
+)
 
 export default styled(BlogPostComponent)`
   ${PagesStyle}
