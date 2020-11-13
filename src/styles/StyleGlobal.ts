@@ -137,15 +137,10 @@ export const GlobalStyle = createGlobalStyle`
     background: transparent;
   }
 
-  a:hover {
-    color: inherit;
-  }
-
   a:active,
   a:hover,
   a:link,
   a:visited {
-    color: inherit;
     text-decoration: none;
     outline: none;
   }
