@@ -52,6 +52,7 @@ const HeaderContainerComponent: React.FC<Props> = ({ className }): JSX.Element =
 const StyledComponent = styled(HeaderContainerComponent)`
   width: 100%;
   flex-direction: column;
+  padding: 50px 0 0;
   ${FlexCenter};
 `
 
