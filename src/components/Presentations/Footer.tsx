@@ -19,6 +19,7 @@ const FooterComponent: React.FC<Props> = ({ className }): JSX.Element => (
 
 const StyledComponent = styled(FooterComponent)`
   width: 100%;
+  padding: 0 0 20px;
   ${FlexCenter};
 
   a {
