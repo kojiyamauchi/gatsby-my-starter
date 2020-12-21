@@ -11,7 +11,7 @@ type Props = {
   date: string
 }
 
-const BlogPostDataComponent: React.FC<Props> = ({ className, categories, date }): JSX.Element => (
+const BlogPostDataComponent: React.VFC<Props> = ({ className, categories, date }): JSX.Element => (
   <ul className={`${className} list`}>
     <li className="category">
       {categories?.map((info, index) => (

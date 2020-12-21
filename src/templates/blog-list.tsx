@@ -48,7 +48,7 @@ export const query = graphql`
   }
 `
 
-const BlogListComponent: React.FC<Props> = ({ className, location, data, pageContext }): JSX.Element => (
+const BlogListComponent: React.VFC<Props> = ({ className, location, data, pageContext }): JSX.Element => (
   <Layout>
     <SEO title="Blog List Page." description="This is Blog List Page." pagePath={location.pathname} />
     <div className={className}>

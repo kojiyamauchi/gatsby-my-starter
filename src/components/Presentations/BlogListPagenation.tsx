@@ -13,7 +13,7 @@ type Props = {
   isLast: boolean
 }
 
-const BlogListPagenationComponent: React.FC<Props> = ({ className, category, current, isFirst, isLast }): JSX.Element => {
+const BlogListPagenationComponent: React.VFC<Props> = ({ className, category, current, isFirst, isLast }): JSX.Element => {
   const branches = category ? `/category/${category}/` : `/blog-list/`
 
   return (

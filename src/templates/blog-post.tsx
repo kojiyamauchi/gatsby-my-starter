@@ -44,7 +44,7 @@ export const query = graphql`
   }
 `
 
-const BlogPostComponent: React.FC<Props> = ({ className, location, data, pageContext }): JSX.Element => (
+const BlogPostComponent: React.VFC<Props> = ({ className, location, data, pageContext }): JSX.Element => (
   <Layout>
     <SEO
       title={data?.markdownRemark?.frontmatter?.title || undefined}

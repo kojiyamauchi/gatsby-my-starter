@@ -14,7 +14,7 @@ type Props = {
   location: { pathname: string }
 }
 
-const SecondaryPageComponent: React.FC<Props> = ({ className, location }): JSX.Element => (
+const SecondaryPageComponent: React.VFC<Props> = ({ className, location }): JSX.Element => (
   <Layout>
     <SEO title="Secondary Page" pagePath={location.pathname} />
     <BackgroundImage tag="main" className={className} fileName="logo.png">
