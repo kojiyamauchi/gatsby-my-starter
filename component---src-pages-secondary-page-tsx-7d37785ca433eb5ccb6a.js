@@ -1,2 +1,2 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[9],{XRqp:function(e,a,n){"use strict";n.r(a);var c=n("nKUr"),t=n("H8eV"),s=n("9Dj+"),o=n("mKp1"),i=n("vOnD"),p=n("zowL"),r=n("hHqT");a.default=Object(i.c)((function(e){var a=e.className,n=e.location;return Object(c.jsxs)(s.a,{children:[Object(c.jsx)(t.a,{title:"Secondary Page",pagePath:n.pathname}),Object(c.jsx)(r.a,{tag:"main",className:a,fileName:"logo.png",children:Object(c.jsx)(o.a,{letter:"Secondary",className:"secondary-page page-heading"})})]})})).withConfig({displayName:"secondary-page",componentId:"sc-19xo3qd-0"})(["",""],p.e)}}]);
-//# sourceMappingURL=component---src-pages-secondary-page-tsx-2274f9809bc8240b8ba5.js.map
+//# sourceMappingURL=component---src-pages-secondary-page-tsx-7d37785ca433eb5ccb6a.js.map
