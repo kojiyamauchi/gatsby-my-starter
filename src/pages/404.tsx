@@ -8,7 +8,7 @@ type Props = {
   location: { pathname: string }
 }
 
-const NotFoundPageComponent: React.FC<Props> = ({ className, location }): JSX.Element => (
+const NotFoundPageComponent: React.VFC<Props> = ({ className, location }): JSX.Element => (
   <Layout>
     <SEO title="404: Not found" pagePath={location.pathname} />
     <main className={className}>

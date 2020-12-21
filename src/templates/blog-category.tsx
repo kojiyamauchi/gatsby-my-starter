@@ -49,7 +49,7 @@ export const query = graphql`
   }
 `
 
-const BlogCategoryComponent: React.FC<Props> = ({ className, location, data, pageContext }): JSX.Element => (
+const BlogCategoryComponent: React.VFC<Props> = ({ className, location, data, pageContext }): JSX.Element => (
   <Layout>
     <SEO title="Blog Category Page." description="This is Blog Category Page." pagePath={location.pathname} />
     <div className={className}>

@@ -10,7 +10,7 @@ type Props = {
   className?: string
 }
 
-const NavigationComponent: React.FC<Props> = ({ className, pagenavigation }): JSX.Element => <div className={className}>{pagenavigation}</div>
+const NavigationComponent: React.VFC<Props> = ({ className, pagenavigation }): JSX.Element => <div className={className}>{pagenavigation}</div>
 
 const StyledComponent = styled(NavigationComponent)`
   width: 100%;

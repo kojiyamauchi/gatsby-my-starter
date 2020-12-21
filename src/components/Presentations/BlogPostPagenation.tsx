@@ -11,7 +11,7 @@ type Props = {
   next: string | null
 }
 
-const BlogPostPagenationComponent: React.FC<Props> = ({ className, previous, next }): JSX.Element => (
+const BlogPostPagenationComponent: React.VFC<Props> = ({ className, previous, next }): JSX.Element => (
   <ul className={className}>
     {previous && (
       <li className="prev">

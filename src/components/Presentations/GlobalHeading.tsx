@@ -9,7 +9,7 @@ type Props = {
   className?: string
 }
 
-const GlobalHeadingComponent: React.FC<Props> = ({ letter, className }): JSX.Element => (
+const GlobalHeadingComponent: React.VFC<Props> = ({ letter, className }): JSX.Element => (
   <div className={className}>
     <h1>{letter}</h1>
   </div>

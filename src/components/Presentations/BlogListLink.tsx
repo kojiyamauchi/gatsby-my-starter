@@ -12,7 +12,7 @@ type Props = {
   edges: BlogListQuery['allMarkdownRemark']['edges']
 }
 
-const BlogListLinkComponent: React.FC<Props> = ({ className, edges }): JSX.Element => {
+const BlogListLinkComponent: React.VFC<Props> = ({ className, edges }): JSX.Element => {
   const setLink = (): JSX.Element[] => {
     return edges.map(({ node }) => (
       <Link className="list-link" to={node?.fields?.slug || ''} key={node?.id}>

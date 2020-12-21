@@ -14,7 +14,7 @@ type Props = {
   location: { pathname: string }
 }
 
-const TopPageComponent: React.FC<Props> = ({ className, location }): JSX.Element => (
+const TopPageComponent: React.VFC<Props> = ({ className, location }): JSX.Element => (
   <Layout>
     <SEO title="" pagePath={location.pathname} />
     <BackgroundImage tag="main" className={className} fileName="logo.png">

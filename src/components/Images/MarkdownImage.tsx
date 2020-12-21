@@ -14,7 +14,7 @@ type Props = {
   id?: string
 }
 
-export const MarkdownImage: React.FC<Props> = ({ className, style, alt, id }): JSX.Element => {
+export const MarkdownImage: React.VFC<Props> = ({ className, style, alt, id }): JSX.Element => {
   const { allMarkdownRemark } = useStaticQuery<MarkdownImageQuery>(graphql`
     query MarkdownImage {
       allMarkdownRemark {

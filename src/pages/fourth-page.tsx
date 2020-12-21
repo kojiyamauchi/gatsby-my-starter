@@ -14,7 +14,7 @@ type Props = {
   location: { pathname: string }
 }
 
-const FourthPageComponent: React.FC<Props> = ({ className, location }): JSX.Element => (
+const FourthPageComponent: React.VFC<Props> = ({ className, location }): JSX.Element => (
   <Layout>
     <SEO title="Fourth Page" pagePath={location.pathname} />
     <BackgroundImage tag="main" className={className} fileName="logo.png">

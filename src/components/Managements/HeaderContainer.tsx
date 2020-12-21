@@ -13,7 +13,7 @@ type Props = {
   className?: string
 }
 
-const HeaderContainerComponent: React.FC<Props> = ({ className }): JSX.Element => {
+const HeaderContainerComponent: React.VFC<Props> = ({ className }): JSX.Element => {
   const data = useStaticQuery<HeaderQuery>(graphql`
     query Header {
       site {

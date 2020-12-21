@@ -9,7 +9,7 @@ type Props = {
   className?: string
 }
 
-const FooterComponent: React.FC<Props> = ({ className }): JSX.Element => (
+const FooterComponent: React.VFC<Props> = ({ className }): JSX.Element => (
   <div className={className}>
     <a href="http://kojiyamauchi.com" target="_blank" rel="noreferrer">
       © {new Date().getFullYear()} All The Small Things, All Rights Reserved.
