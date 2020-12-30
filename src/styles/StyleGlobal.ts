@@ -111,6 +111,7 @@ export const GlobalStyle = createGlobalStyle`
   footer,
   header,
   hgroup,
+  main,
   menu,
   nav,
   section {
