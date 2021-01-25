@@ -2,10 +2,9 @@
   Mixins for Style.
 */
 
-// Import Styled Components.
 import { css } from 'styled-components'
-// Import Style Variables.
 import { BREAK_POINT_WIDTH } from '@/styles/StyleConstants'
+import { BreakPointWidthMember, BreakPointMember } from '@/types/type'
 
 // Break Point.
 /*
@@ -20,7 +19,7 @@ Extra Large Desktop. => ${BreakPoint.extraLargeDesktop` Add CSS Property `}
 */
 export const BreakPoint = Object.keys(BREAK_POINT_WIDTH).reduce((accumulator, current): BreakPointMember => {
   const breakPointKey = current as keyof BreakPointWidthMember
-  accumulator[breakPointKey] = (args: TemplateStringsArray) => css`
+  accumulator[breakPointKey] = (args: TemplateStringsArray): import('styled-components').FlattenSimpleInterpolation => css`
     @media (min-width: ${BREAK_POINT_WIDTH[breakPointKey]}px) {
       ${css(args)};
     }
