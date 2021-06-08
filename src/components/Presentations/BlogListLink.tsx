@@ -4,7 +4,7 @@
 
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import Img, { FluidObject } from 'gatsby-image'
+import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image'
 import { BlogListQuery } from 'graphql-types'
 
 type Props = {
@@ -14,24 +14,19 @@ type Props = {
 
 const BlogListLinkComponent: React.VFC<Props> = ({ className, edges }): JSX.Element => {
   const setLink = (): JSX.Element[] => {
-    return edges.map(({ node }) => (
-      <Link className="list-link" to={node?.fields?.slug || ''} key={node?.id}>
-        <dl className="post-wrapper">
-          <dd className="post-image-wrapper">
-            <Img
-              className="post-image"
-              /*
-               TODO:
-               gatsby-image <-> gatsby-plugin-graphql-codeine Too Match Type. gatsby-image/index.d.ts(31, 3)
-               Using gatsby-image/index.d.ts
-              */
-              fluid={node?.frontmatter?.image?.childImageSharp?.fluid as FluidObject | FluidObject[]}
-            />
-          </dd>
-          <dt className="post-title">{node?.frontmatter?.title}</dt>
-        </dl>
-      </Link>
-    ))
+    return edges.map(({ node }) => {
+      const image = getImage(node!.frontmatter!.image! as ImageDataLike)
+      return (
+        <Link className="list-link" to={node?.fields?.slug || ''} key={node?.id}>
+          <dl className="post-wrapper">
+            <dd className="post-image-wrapper">
+              <GatsbyImage className="post-image" alt="Blog Post Image" image={image!} />
+            </dd>
+            <dt className="post-title">{node?.frontmatter?.title}</dt>
+          </dl>
+        </Link>
+      )
+    })
   }
 
   return <div className={className}>{setLink()}</div>
