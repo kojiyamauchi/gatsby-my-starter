@@ -35,9 +35,7 @@ export const query = graphql`
             title
             image {
               childImageSharp {
-                fluid(quality: 90, maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(quality: 90, placeholder: BLURRED)
               }
               id
             }

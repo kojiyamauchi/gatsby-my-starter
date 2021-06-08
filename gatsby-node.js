@@ -5,18 +5,13 @@
  */
 
 const path = require('path')
+const ESLintPlugin = require('eslint-webpack-plugin')
 const { CHOOSE_CMS } = require('./setup')
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     module: {
       rules: [
-        {
-          enforce: 'pre',
-          test: /\.(js|jsx|ts|tsx)$/,
-          exclude: /(node_modules|gatsby-browser.js|sync-requires.js)$/,
-          use: 'eslint-loader'
-        },
         {
           enforce: 'pre',
           test: /\.(js|jsx|ts|tsx)$/,
@@ -31,7 +26,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@': path.resolve(__dirname, 'src')
       }
     },
-    plugins: []
+    plugins: [new ESLintPlugin({ files: [path.resolve(__dirname, '../resource/**/*.{ts,tsx,js,jsx}')], failOnWarning: true })]
   })
 }
 
@@ -142,8 +137,9 @@ switch (CHOOSE_CMS) {
       // For Category Pages. (Processing of Each Categories)
       pickupCategories(result).map((category) => {
         const postsDisplayedNumber = 3
-        const totalPost = result.data.allMarkdownRemark.edges.map(({ node }) => node.frontmatter.categories.includes(category)).filter((truthyArr) => truthyArr)
-          .length
+        const totalPost = result.data.allMarkdownRemark.edges
+          .map(({ node }) => node.frontmatter.categories.includes(category))
+          .filter((truthyArr) => truthyArr).length
         const totalPages = Math.ceil(totalPost / postsDisplayedNumber)
 
         Array.from({ length: totalPages }, (_info, index) => {
